@@ -1,0 +1,18 @@
+{
+  "title": "Spiegel Plus Unblocker",
+  "name": "spiegel-unblocker-plus",
+  "version": "1.0.2",
+  "permissions": {
+    "multiprocess": true
+}, "description": "An Addon with the function to unblock the paywall at spiegel.de for Spiegel Plus content",
+  "main": "index.js",
+  "author": "informationshallbefree",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "GNU GPLv3",
+  "keywords": [
+    "spiegel", "unblocker"
+  ]
+}

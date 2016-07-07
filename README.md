@@ -1,2 +1,2 @@
-# spiegel-plus-unlocker-firefox
-A Firefox Addon to decrypt every Spiegel Plus article without paying money.
+#Spiegel Plus Unblocker
+An Addon with the function to unblock the paywall at spiegel.de for Spiegel Plus content
