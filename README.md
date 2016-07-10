@@ -30,4 +30,4 @@ javascript:(function(){ var%20script=document.createElement('script'); script.ty
 in ein Lesezeichen. Dieser Code umgeht die Paywall. Schau hier:
 https://support.mozilla.org/de/kb/Lesezeichen-sichern-und-wiederherstellen für mehr Informationen.
 
-Das Addon ist noch in Arbeit... sorry
+Das Addon ist noch in Arbeit... Sorry
