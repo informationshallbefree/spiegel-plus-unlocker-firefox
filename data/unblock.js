@@ -1,3 +1,11 @@
+if (window.location.host == "www.spiegel.de"){
+    alert('spiegel');
+    spiegel();
+} else if(window.location.host == "www.bergedorfer-zeitung.de"){
+    alert('bergische');
+    bergische();
+}
+
 function spiegel(){
     document.getElementsByTagName("body")[0].className = document.getElementsByTagName("body")[0].className.replace(/\bunpurchased\b/,'');
     texts = document.getElementsByClassName("obfuscated");
@@ -48,12 +56,4 @@ function bergische() {
 	}
 	texts[target].innerHTML = "";
 	document.getElementsByTagName("body")[0].className = document.getElementsByTagName("body")[0].className.replace(/\bunpurchased\b/,'');
-}
-
-if (window.location.host == "www.spiegel.de"){
-    alert('spiegel');
-    spiegel();
-} else if(window.location.host == "www.bergedorfer-zeitung.de"){
-    alert('bergische');
-    bergische();
 }
