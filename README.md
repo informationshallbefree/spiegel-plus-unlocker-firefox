@@ -14,6 +14,8 @@ into a bookmark in your Bookmarks Toolbar. This is a link which you can use for 
 See https://support.mozilla.org/en-US/kb/create-bookmarks-save-your-favorite-webpages for more.
 
 The Addon is currently wip... sorry
+
+For those who want to point out that we could change the scripts content all time, yes that's true, but only to keep it up-to-date. Feel free to copy and host the script for yourself :)
 <br>
 <br>
 <br>
@@ -31,3 +33,5 @@ in ein Lesezeichen. Dieser Code umgeht die Paywall. Schau hier:
 https://support.mozilla.org/de/kb/Lesezeichen-sichern-und-wiederherstellen für mehr Informationen.
 
 Das Addon ist noch in Arbeit... Sorry
+
+Für die jenigen, die der Meinung sind, dass wir das Script jederzeit verändern können, ja das können wir, aber nur um es aktuell zu halten. Fühlt euch frei es jederzeit zu kopieren und selber zu hosten.
