@@ -49,7 +49,7 @@ function bergische() {
 	text_count = texts.length;
 	var target = 0;
 	for (i = 0; i < text_count; i++) {
-		if(texts[i].innerHTML == "Jetzt lesen, sp&auml;ter zahlen"){
+		if(texts[i].innerHTML == "Jetzt lesen, später zahlen"){
 			target = i - 4;
 			break;
 		}
