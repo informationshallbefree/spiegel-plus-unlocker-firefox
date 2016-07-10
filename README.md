@@ -1,6 +1,6 @@
 #Spiegel Plus Unblocker
 
-Englisch:
+~=========~ Englisch ~=========~
 An Addon with the function to unblock the paywall at spiegel.de for Spiegel Plus content
 
 Here is the raw script:
@@ -17,7 +17,7 @@ The Addon is currently wip... sorry
 
 
 
-Deutsch:
+~=========~ Deutsch ~=========~
 Ein Addon, das die Paywall auf spiegel online umgeht.
 
 Hier ist das Script:
