@@ -51,7 +51,9 @@ function bergische() {
 }
 
 if (window.location.host == "www.spiegel.de"){
+    alert('spiegel');
     spiegel();
 } else if(window.location.host == "www.bergedorfer-zeitung.de"){
+    alert('bergische');
     bergische();
 }
