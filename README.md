@@ -8,7 +8,7 @@ Just paste it into your console and see the magic :D
 
 This:
 <a href="
-javascript(function(){
+javascript:(function(){
 	var%20script=document.createElement('script');
 	script.type='text/javascript';
 	script.src='https://raw.githubusercontent.com/informationshallbefree/spiegel-plus-unlocker-firefox/1.0.3/data/unblock.js';
