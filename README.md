@@ -14,9 +14,9 @@ into a bookmark in your Bookmarks Toolbar. This is a link which you can use for 
 See https://support.mozilla.org/en-US/kb/create-bookmarks-save-your-favorite-webpages for more.
 
 The Addon is currently wip... sorry
-
-
-
+<br>
+<br>
+<br>
 ~=========~ Deutsch ~=========~<br>
 Ein Addon, das die Paywall auf spiegel online umgeht.
 
