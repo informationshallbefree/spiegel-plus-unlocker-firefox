@@ -38,6 +38,22 @@ function spiegel(){
                 }
             }
         }
+        //after relaunch
+        $(".js-spiegelplus-obfuscated-intro").remove();
+        $("div").each(function () {
+            var element = $(this),
+                position = element.css("position"),
+                width = element.css("width"),
+                filter = element.css("filter");
+                webkitFilter = element.css("-webkit-filter");
+
+            if (position =="absolute" && width =="640px") { element.remove(); }
+            if (filter =="blur(3px)" || webkitFilter =="blur(3px)") {
+                var elem = element.attr("class");
+                element.css("filter","none!important");
+                $("."+elem).attr("style", "-webkit-filter:none!important;filter:none!important;opacity:1!important");
+            }
+        })
         texts[i].innerHTML = new_content;
     }
 }
