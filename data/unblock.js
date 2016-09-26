@@ -5,7 +5,13 @@ if (window.location.host == "www.spiegel.de"){
 }
 
 function spiegel(){
-    document.getElementsByTagName("body")[0].className = document.getElementsByTagName("body")[0].className.replace(/\bunpurchased\b/,'');
+    //hide the paylater-banner
+    document.getElementsByClassName("lp_mwi_payment-method-wrapper")[0].parentNode.parentNode.style.display = 'none';
+    var obfuscated_intro = document.getElementsByClassName("js-spiegelplus-obfuscated-intro")[0];
+    obfuscated_intro.style.display='none';
+
+    //de-obfuscate content
+    obfuscated_intro.parentNode.parentNode.className = '';
     texts = document.getElementsByClassName("obfuscated");
     text_count = texts.length;
     var escape;
